@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#C8102E">
+  <title>Só Pizzas — Peça a sua pizza agora</title>
+  <meta name="description" content="Peça sua pizza no Só Pizzas. Escolha a loja mais perto de você e faça seu pedido em poucos toques.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="logo" aria-hidden="true">🍕</div>
+    <h1>Só Pizzas</h1>
+    <p class="slogan">Pizza quentinha, do jeito que você gosta</p>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="bloco-local">
+      <p class="chamada">Escolha onde quer pedir sua pizza</p>
+      <button id="btn-local" class="btn-local" type="button">
+        📍 Usar minha localização
+      </button>
+      <p id="status-local" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="secao-proxima" class="secao" hidden>
+      <h2 class="titulo-secao">Loja mais próxima</h2>
+      <div id="lista-proxima" class="lista"></div>
+    </section>
+
+    <section id="secao-outras" class="secao">
+      <h2 id="titulo-outras" class="titulo-secao">Nossas lojas</h2>
+      <div id="lista-outras" class="lista"></div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Só Pizzas — Porto Velho/RO</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
