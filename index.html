@@ -3,17 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#C8102E">
+  <meta name="theme-color" content="#FFD500">
   <title>Só Pizzas — Peça a sua pizza agora</title>
   <meta name="description" content="Peça sua pizza no Só Pizzas. Escolha a loja mais perto de você e faça seu pedido em poucos toques.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="topo">
-    <div class="logo" aria-hidden="true">🍕</div>
-    <h1>Só Pizzas</h1>
+    <h1 class="sr-only">Só Pizzas</h1>
+
+    <!-- Logo oficial. Se logo.png não existir, o script mostra o desenho abaixo. -->
+    <img id="logo-img" class="logo-img" src="logo.png" alt="Só Pizzas"
+         width="220" height="220" fetchpriority="high" decoding="async">
+
+    <svg id="logo-fallback" class="logo-svg" viewBox="0 0 240 172"
+         role="img" aria-label="Só Pizzas" hidden>
+      <g font-family="system-ui, 'Segoe UI', Arial, sans-serif"
+         font-weight="900" text-anchor="middle" letter-spacing="-1">
+        <text x="120" y="72" font-size="66" stroke="#1A1A1A" stroke-width="17"
+              style="paint-order:stroke fill">Só</text>
+        <text x="120" y="72" font-size="66" fill="#E01F26" stroke="#FFFFFF"
+              stroke-width="9" style="paint-order:stroke fill">Só</text>
+        <text x="120" y="146" font-size="60" stroke="#1A1A1A" stroke-width="17"
+              style="paint-order:stroke fill">Pizzas</text>
+        <text x="120" y="146" font-size="60" fill="#E01F26" stroke="#FFFFFF"
+              stroke-width="9" style="paint-order:stroke fill">Pizzas</text>
+      </g>
+    </svg>
+
     <p class="slogan">Pizza quentinha, do jeito que você gosta</p>
   </header>
 

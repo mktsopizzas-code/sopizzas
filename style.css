@@ -1,13 +1,16 @@
+/* Identidade visual da logo Só Pizzas:
+   fundo amarelo, letras vermelhas com contorno branco e traço preto. */
 :root {
-  --vermelho: #C8102E;
-  --vermelho-escuro: #9B0C23;
-  --amarelo: #FFC72C;
-  --amarelo-escuro: #E5AE12;
-  --texto: #1E1512;
+  --amarelo: #FFD500;
+  --amarelo-escuro: #E8BF00;
+  --vermelho: #E01F26;
+  --vermelho-escuro: #B0151B;
+  --preto: #1A1A1A;
+  --texto: #241A17;
   --texto-suave: #5C514C;
-  --fundo: #FFF8EE;
+  --fundo: #FFFDF5;
   --card: #FFFFFF;
-  --borda: #F0E2CC;
+  --borda: #EFE3C2;
   --raio: 16px;
 }
 
@@ -31,32 +34,45 @@ body {
   flex-direction: column;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ---------- Topo ---------- */
 
 .topo {
-  background: linear-gradient(160deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%);
-  color: #fff;
+  background: var(--amarelo);
   text-align: center;
-  padding: 28px 20px 32px;
+  padding: 22px 20px 26px;
+  border-bottom: 5px solid var(--vermelho);
 }
 
-.logo {
-  font-size: 52px;
-  line-height: 1;
-  margin-bottom: 6px;
+.logo-img,
+.logo-svg {
+  display: block;
+  width: 180px;
+  height: auto;
+  max-width: 60vw;
+  margin: 0 auto;
 }
 
-.topo h1 {
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+.logo-svg[hidden],
+.logo-img[hidden] {
+  display: none;
 }
 
 .slogan {
-  margin-top: 6px;
-  font-size: 16px;
-  color: var(--amarelo);
-  font-weight: 600;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #7A1520;
 }
 
 /* ---------- Conteúdo ---------- */
@@ -66,7 +82,7 @@ body {
   width: 100%;
   max-width: 560px;
   margin: 0 auto;
-  padding: 22px 16px 32px;
+  padding: 24px 16px 32px;
 }
 
 .bloco-local {
@@ -76,17 +92,17 @@ body {
 
 .chamada {
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 14px;
 }
 
 .btn-local {
   width: 100%;
-  border: 2px solid var(--vermelho);
+  border: 3px solid var(--vermelho);
   background: var(--card);
   color: var(--vermelho);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   font-family: inherit;
   padding: 15px 18px;
   border-radius: var(--raio);
@@ -95,7 +111,7 @@ body {
 }
 
 .btn-local:active {
-  background: #FFEFEF;
+  background: #FFF0F0;
 }
 
 .btn-local[disabled] {
@@ -138,14 +154,14 @@ body {
 }
 
 .card.destaque {
-  border: 2px solid var(--amarelo);
-  box-shadow: 0 6px 18px rgba(200, 16, 46, 0.12);
+  border: 3px solid var(--amarelo);
+  box-shadow: 0 6px 18px rgba(224, 31, 38, 0.14);
 }
 
 .selo {
   display: inline-block;
-  background: var(--amarelo);
-  color: #4A3200;
+  background: var(--vermelho);
+  color: #fff;
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -171,9 +187,9 @@ body {
 .distancia {
   display: inline-block;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--texto);
-  background: #FFF3D6;
+  background: #FFF3B8;
   border-radius: 999px;
   padding: 4px 12px;
   margin-bottom: 14px;
@@ -197,28 +213,22 @@ body {
   background: var(--vermelho-escuro);
 }
 
-.card.destaque .btn-pedir {
-  background: var(--amarelo);
-  color: #3A2600;
-}
-
-.card.destaque .btn-pedir:active {
-  background: var(--amarelo-escuro);
-}
-
 /* ---------- Rodapé ---------- */
 
 .rodape {
   text-align: center;
   padding: 18px 16px 26px;
   font-size: 14px;
-  color: var(--texto-suave);
+  color: #7A1520;
+  font-weight: 700;
+  background: var(--amarelo);
+  border-top: 5px solid var(--vermelho);
 }
 
 /* ---------- Telas maiores ---------- */
 
 @media (min-width: 600px) {
-  .topo h1 { font-size: 42px; }
-  .logo { font-size: 64px; }
+  .logo-img,
+  .logo-svg { width: 230px; }
   .btn-local { width: auto; min-width: 300px; }
 }

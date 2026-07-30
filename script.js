@@ -25,6 +25,22 @@ const LOJAS = [
 
 /* ========================================================== */
 
+/* Se logo.png ainda não estiver na pasta, mostra o desenho de reserva
+   em vez de deixar um ícone quebrado no topo. */
+const logoImg = document.getElementById("logo-img");
+
+function usarLogoReserva() {
+  logoImg.hidden = true;
+  document.getElementById("logo-fallback").hidden = false;
+}
+
+logoImg.addEventListener("error", usarLogoReserva);
+
+// O script roda no fim da página: a imagem pode já ter falhado antes daqui.
+if (logoImg.complete && logoImg.naturalWidth === 0) {
+  usarLogoReserva();
+}
+
 const btnLocal = document.getElementById("btn-local");
 const statusLocal = document.getElementById("status-local");
 const secaoProxima = document.getElementById("secao-proxima");
