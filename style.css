@@ -1,10 +1,12 @@
 /* Identidade visual da logo Só Pizzas:
    fundo amarelo, letras vermelhas com contorno branco e traço preto. */
 :root {
-  --amarelo: #FFD500;
-  --amarelo-escuro: #E8BF00;
-  --vermelho: #E01F26;
-  --vermelho-escuro: #B0151B;
+  /* Cores amostradas direto do arquivo logo.png */
+  --amarelo: #FAE101;
+  --amarelo-escuro: #E0CA00;
+  --vermelho-logo: #FE0000; /* vermelho puro da logo, só em detalhes */
+  --vermelho: #E00000;      /* um tom abaixo, para texto e botões terem contraste */
+  --vermelho-escuro: #B00000;
   --preto: #1A1A1A;
   --texto: #241A17;
   --texto-suave: #5C514C;
@@ -50,16 +52,18 @@ body {
 .topo {
   background: var(--amarelo);
   text-align: center;
-  padding: 22px 20px 26px;
-  border-bottom: 5px solid var(--vermelho);
+  padding: 10px 20px 18px;
+  border-bottom: 5px solid var(--vermelho-logo);
 }
 
+/* A logo tem o mesmo amarelo do topo, então ela se funde ao fundo.
+   Nunca passa de 192px, que é o tamanho real do arquivo. */
 .logo-img,
 .logo-svg {
   display: block;
-  width: 180px;
+  width: 158px;
   height: auto;
-  max-width: 60vw;
+  max-width: 62vw;
   margin: 0 auto;
 }
 
@@ -154,7 +158,7 @@ body {
 }
 
 .card.destaque {
-  border: 3px solid var(--amarelo);
+  border: 3px solid var(--vermelho-logo);
   box-shadow: 0 6px 18px rgba(224, 31, 38, 0.14);
 }
 
@@ -222,13 +226,13 @@ body {
   color: #7A1520;
   font-weight: 700;
   background: var(--amarelo);
-  border-top: 5px solid var(--vermelho);
+  border-top: 5px solid var(--vermelho-logo);
 }
 
 /* ---------- Telas maiores ---------- */
 
 @media (min-width: 600px) {
   .logo-img,
-  .logo-svg { width: 230px; }
+  .logo-svg { width: 192px; }
   .btn-local { width: auto; min-width: 300px; }
 }
