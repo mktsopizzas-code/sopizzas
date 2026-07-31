@@ -69,6 +69,26 @@ function formatarDistancia(metros) {
   return (metros / 1000).toFixed(2) + " km";
 }
 
+/* Repassa os parâmetros da URL atual (utm_source, ttclid, etc.) para o
+   link da loja, para o pedido continuar rastreado até o site de pedidos.
+   Roda a cada card criado, então sobrevive a nova renderização. */
+function linkComParametros(endereco) {
+  const atuais = window.location.search;
+  if (!atuais) return endereco;
+
+  try {
+    const destino = new URL(endereco);
+    new URLSearchParams(atuais).forEach(function (valor, chave) {
+      destino.searchParams.set(chave, valor);
+    });
+    return destino.toString();
+  } catch (e) {
+    // Link mal formado: melhor mandar o cliente para a loja sem rastreio
+    // do que deixar o botão quebrado.
+    return endereco;
+  }
+}
+
 function criarCard(loja, opcoes) {
   const destaque = opcoes && opcoes.destaque;
 
@@ -100,7 +120,7 @@ function criarCard(loja, opcoes) {
 
   const botao = document.createElement("a");
   botao.className = "btn-pedir";
-  botao.href = loja.link;
+  botao.href = linkComParametros(loja.link);
   botao.target = "_blank";
   botao.rel = "noopener";
   botao.textContent = "Pedir agora";
